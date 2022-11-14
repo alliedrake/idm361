@@ -1,0 +1,53 @@
+body {
+	background-color:#B1D1E1;
+}
+
+/* 10px top/bottom auto - centered left/right  */
+
+#content {
+	width: 320px;
+	margin: 10px auto; 
+}
+
+#face {
+	width: 100px;
+	height: 100px;
+	margin: 90px auto 10px;
+	background:url(img/face_smile.svg);
+}
+
+#output {
+	text-align: center;
+}
+
+@media only screen and (orientation:portrait) {
+	body {
+		background-color: #ebff90;
+	}
+
+	#face {
+		margin: 90px auto 10px;
+		background:url(img/face_smile.svg);
+	}
+
+	#output:after {
+		content: 'Good Morning!';
+	}
+}
+
+
+
+@media only screen and (orientation:landscape) {
+	body {
+		background-color: #100347;
+	}
+
+	#face {
+		margin: 50px auto 10px;
+		background:url(img/face_frown.svg);
+	}
+
+	#output:after {
+		content: 'Goodnight!';
+	}
+}

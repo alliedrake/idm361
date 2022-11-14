@@ -1,0 +1,84 @@
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color:#B1D1E1;
+}
+
+/* 10px top/bottom auto - centered left/right  */
+
+#content {
+	width: 320px;
+	margin: 10px auto; 
+}
+
+#face {
+	margin: 100px auto;
+	width: 100%;
+	background:url(images/sun.svg);
+	background-size: cover;
+ 	height: 0;
+ 	padding: 0; /* reset */
+ 	padding-bottom: calc(100% * 11 / 12);
+}
+
+#output {
+	text-align: center;
+}
+
+@media only screen and (orientation:portrait) {
+	body {
+		background: linear-gradient(180deg, #c6efff 0%, rgb(55, 111, 252));
+	}
+
+	#face {
+		width: 100%;
+		background:url(images/sun.svg);
+		background-size: cover;
+ 		height: 0;
+ 		padding: 0; /* reset */
+ 		padding-bottom: calc(100% * 11 / 12);
+	}
+
+	#output:after {
+		content: 'Good Morning!';
+		font-family: 'Fredoka One', cursive;
+		color: white;
+		font-size: 1.5rem;
+	}
+}
+
+
+
+@media only screen and (orientation:landscape) {
+
+
+	body {
+		background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(52, 43, 107));
+	}
+
+	#face {
+		margin: 70px auto;
+		width: 100%;
+		background:url(images/moontest.svg);
+		background-size: cover;
+ 		height: 0;
+ 		padding: 0; /* reset */
+ 		padding-bottom: calc(100% * 134 /389);
+	}
+
+	#output:after {
+		content: 'Goodnight!';
+		font-family: 'Fredoka One', cursive;
+		color: white;
+		font-size: 1.5rem;
+	}
+
+	#content {
+	
+			width: 460px;
+			margin: 10px auto; 
+	}
+}

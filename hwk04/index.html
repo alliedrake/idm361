@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>UpTime Interval Timer</title>
+	<!-- META -->
+	<meta name="viewport" content="initial-scale= 1.0, user-scalable=no, width=device-width, maximum-scale=1.0">
+
+	<!--Make this web page mobile device friendly-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!-- Make the status bar default black (can only be two colors - black or white) -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- IPHONE -->
+	<link href="images/256x256.png" sizes="256x256" rel="apple-touch-icon">
+	<link href="images/196x196.png" sizes="196x196" rel="apple-touch-icon">
+	<link href="images/180x180.png" sizes="180x180" rel="apple-touch-icon">
+	<link href="images/167x167.png" sizes="167x167" rel="apple-touch-icon">
+	<link href="images/120x120.png" sizes="120x120" rel="apple-touch-icon">
+	<link href="images/114x114.png" sizes="114x114" rel="apple-touch-icon">
+	<link href="images/100x100.png" sizes="100x100" rel="apple-touch-icon">
+	<link href="images/87x87.png" sizes="87x87" rel="apple-touch-icon">
+	<link href="images/80x80.png" sizes="80x80" rel="apple-touch-icon">
+	<link href="images/60x60.png" sizes="60x60" rel="apple-touch-icon">
+	<link href="images/58x58.png" sizes="58x58" rel="apple-touch-icon">
+	<link href="images/57x57.png" sizes="57x57" rel="apple-touch-icon">
+	<link href="images/50x50.png" sizes="50x50" rel="apple-touch-icon">
+	<link href="images/40x40.png" sizes="40x40" rel="apple-touch-icon">
+	<link href="images/29x29.png" sizes="29x29" rel="apple-touch-icon">
+	<link href="images/20x20.png" sizes="20x20" rel="apple-touch-icon">
+
+	<!-- IPAD -->
+	<link href="images/512x512.png" sizes="512x512" rel="apple-touch-icon">
+	<link href="images/152x152.png" sizes="152x152" rel="apple-touch-icon">
+	<link href="images/144x144.png" sizes="144x144" rel="apple-touch-icon">
+	<link href="images/76x76.png" sizes="76x76" rel="apple-touch-icon">
+	<link href="images/72x72.png" sizes="72x72" rel="apple-touch-icon">
+
+
+	<!-- Make the app title different from the title tag -->
+	<meta name="apple-mobile-web-app-title" content="UpTime">
+
+	<!--Disable auto phone number format-detection -->
+	<meta name="format-detection" content="telephone=no">
+
+	<meta charset="utf-8">
+	<!-- CSS -->
+	<link rel="stylesheet" href="css-add2home.css">
+	<link rel="stylesheet" href="css-normalize.css">
+	<link rel="stylesheet" href="css-main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+	<!-- Want to keep font same size and not shrink it on mobile device -->
+<style>
+	html {
+		-webkit-text-size-adjust: 100%; 
+	}
+</style>
+
+</head>
+
+<body>
+	<!-- PAGE CONTENT -->
+	<div id="content">
+		<div id="face">
+			
+			<div id="settings">
+      
+			
+				<div id="prep" class="setting_container">
+					<div class="setting_label">PREPARE TIME</div>
+						<div class="setting_content">
+							<button id="sub_prep">-</button>
+							<div id="prep_time">5</div>
+							<button id="add_prep">+</button>
+						</div>
+				</div>
+				
+				
+				<div id="work" class="setting_container">
+					<div class="setting_label">WORK TIME</div>
+						<div class="setting_content">
+							<!--<button id="sub_work_big">-5</button> -->
+							<button id="sub_work">-</button>
+							<div id="work_time">30</div>
+							<button id="add_work">+</button>
+							<!--<button id="add_work_big">+5</button> -->
+					</div>
+				</div>
+
+				
+				<div id="rest" class="setting_container">
+					<div class="setting_label">REST TIME</div>
+						<div class="setting_content">
+						    <!-- <button id="sub_rest_big">-5</button> -->
+							<button id="sub_rest">-</button>
+							<div id="rest_time">30</div>
+							<button id="add_rest">+</button>
+							<!-- <button id="add_rest_big">+5</button> -->
+					</div>
+			   </div>
+				
+			   
+				 <div id="rounds" class="setting_container">
+					<div class="setting_label">SETS</div>
+						<div class="setting_content">
+							<button id="sub_round">-</button>
+							<div id="rounds_count">8</div>
+							<button id="add_round">+</button>
+						</div>
+					</div>
+				
+		   <div class="start">
+		  <div class="setting_container">
+			<button id="start">START</button>
+		  </div>
+		  </div>
+				
+		</div>
+
+
+			<div id="myModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content" id="modalcontent">
+				  <span class="close">&times;</span>
+				  <div class="modal-timer">
+					<div id="phase"></div>
+					<div id="seconds"></div>
+					<div id="progress"></div>
+				  </div>
+				</div>
+
+				<!-- <div id="main">
+					<div id="seconds"></div>
+					<div id='phase'></div>
+					<div id="progress"></div>
+				</div> -->
+			</div>
+
+</div>
+		<div id="output"></div>
+		<div id="outputtwo"></div>
+	</div>
+	<!-- JAVASCRIPT-->
+	<script src="js-refresh-manifest.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    // Customize config variable BEFORE loading add2home.js file
+    var addToHomeConfig = {
+      touchIcon: true
+    };
+    </script>
+	<script src="js-add2home.js"></script>
+	<script src="js-main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,344 @@
+* { 
+	box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-color:  #dde7fe; 
+    background-attachment: fixed;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('fonts/Montserrat-Bold.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('fonts/Montserrat-Regular.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('fonts/Montserrat-Medium.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Montserrat-Bold';
+    color: #336CFF;
+    font-weight: 100;
+    font-size: 24px;
+}
+
+
+h2 {
+    font-family: 'Montserrat-Bold';
+    color: #618dfd;
+    font-weight: 100;
+    font-size: 24px;
+}
+
+h3 {
+    font-family: 'Montserrat-Bold'; 
+    color: #7098ff;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+h4 {
+    font-family: 'Montserrat-Medium'; 
+    color: #4B5079;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+ul {
+    font-family: 'Montserrat-Regular';
+    color: #202862;
+    font-size: 20px;
+    line-height: 2rem;
+}
+
+/* button text */
+
+/* h5 {
+    font-family: 'Gilroy-Bold'; 
+    color: #4B5079;
+    font-weight: 100;
+    font-size: 12px;
+} */
+
+p {
+    font-family: 'Montserrat-Regular';
+    font-size: 20px;
+    color: #202862;
+    line-height: 2rem;
+    /* margin: .3rem 0 1rem; */
+}
+
+a, a:visited {
+    font-family: 'Montserrat-Bold';
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    /* margin: .3rem 0 1rem; */
+}
+
+a:hover {
+    color: #FF645A;
+    text-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.25);
+}
+
+a:active {
+    color: #8D436D;
+    text-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+button {
+    background-color: #336CFF;
+    font-family: 'Montserrat-Bold';
+    color: #FFFFFF;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+    font-weight: 100;
+    font-size: 18px;
+    border-radius: 10rem;
+    border: none;
+    padding: .7rem 1.5rem;
+    cursor: pointer;
+}
+
+button.redhover {
+    background-color: #FF746B;
+    transition: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+button.redhover:hover {
+    background-color: #777CAB;
+}
+button.checkout:active, button.redhover:active {
+    background-color: #E85454;
+}
+
+.hero {
+    width: 100%;
+    height: 50%;
+    background-image: url('images/hero.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.section_one, .section_two, .section_three {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.header, .context_and_challenge, .process_and_insight, .solution {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+.hero2 {
+    width: 100%;
+    height: 50%;
+    background-image: url('images/wireframes.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.image_row {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.image_row img {
+    width: 100%;
+}
+
+img.script {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* padding-left: 4rem;
+    padding-right: 4rem; */
+}
+
+img.alpha, img.beta {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.view_project {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+
+a:hover {
+    color: #bbb;
+  }
+
+/* LIGHTBOX */
+
+/** LIGHTBOX MARKUP **/
+
+img {
+   width: 100%;
+  }
+
+
+
+.lightbox {
+    /* Default to hidden */
+    display: none;
+  
+    /* Overlay entire screen */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* A bit of padding around image */
+    padding: 1em;
+  
+    /* Translucent background */
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Unhide the lightbox when it's the target */
+  .lightbox:target {
+    display: block;
+  }
+  
+  .lightbox span {
+    /* Full width and height */
+    display: block;
+    width: 100%;
+    height: 100%;
+  
+    /* Size and position background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+
+
+@media only screen and (max-width: 800px) {
+
+    .image_row {
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .image_row img {
+        width: 100%;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+        .header, .context_and_challenge, .process_and_insight, .solution {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding-left: 3rem;
+            padding-right: 3rem;
+    }
+    
+    .image_row {
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .image_row img {
+        width: 100%;
+    }
+
+    img.script {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+   p {
+       font-size: 16px;
+       line-height: 1.5rem;
+   }
+
+   ul {
+    font-family: 'Gilroy';
+    color: #4B5079;
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+.hero2 {
+    width: 100%;
+    height: 30%;
+    background-image: url('images/wireframes.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.hero {
+    width: 100%;
+    height: 30%;
+    background-image: url('images/hero.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+
+}

@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 003
+# version 005
 
 CACHE:
 
@@ -33,6 +33,11 @@ images/256x256.png
 images/512x512.png
 images/1024x1024.png
 images/rotate.png
+
+# AUDIO
+
+sounds/click.mp3
+sounds/ding-sound-effect.mp3
 
 # HTML
 index.HTML

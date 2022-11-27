@@ -5,7 +5,13 @@ html {
 
 body {
 	background-color:#B1D1E1;
+	animation: fadeIn 1s; 
 }
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
 
 @font-face {
     font-family: 'Montserrat-Bold';
@@ -106,6 +112,12 @@ body {
 	overflow: auto; /* Enable scroll if needed */
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	animation: fadeIn 1s; 
+  }
+
+  @keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
   }
   
   /* Modal Content/Box */
@@ -115,8 +127,9 @@ body {
 	top:0;
 	left:0;
 	height:100%;
-	width: 100%;
+	width: 100%; 
   }
+
 
   .modal-timer {
 	display: flex;
@@ -129,7 +142,6 @@ body {
     padding-top: 4rem;
   }
   
-
 
 .modal-timer h1 {
 	font-size: 13rem;
@@ -337,6 +349,7 @@ body {
 
 #progress {
 	font-size: 40px;
+	/* width: 100px; */
 }
 
 

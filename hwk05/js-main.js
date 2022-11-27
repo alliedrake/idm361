@@ -7,6 +7,11 @@ let current_time = 0;
 let rounds_remaining = 0;
 let running = false;
 
+let prepareTimeStr = "5";
+let workTimeStr = "5";
+let restTimeStr = "5";
+let roundsStr = "10";
+
 const prepare_time_div = document.querySelector('#prep_time');
 const work_time_div = document.querySelector('#work_time');
 const rest_time_div = document.querySelector('#rest_time');
@@ -27,7 +32,7 @@ function init() {
     if (prepare_time > 3) {
       prepare_time--;
       buttonClickObj.play();
-      buttonClickObj.currentTime = 0; 
+      // buttonClickObj.currentTime = 0; 
     }
     prepare_time_div.textContent = prepare_time;  
   });
@@ -35,15 +40,15 @@ function init() {
     prepare_time++;
     prepare_time_div.textContent = prepare_time;  
     buttonClickObj.play();
-    buttonClickObj.currentTime = 0; 
+    // buttonClickObj.currentTime = 0; 
   });  
   
 
   document.querySelector('#sub_work').addEventListener('click', () => {
-    work_time < 0 ? work_time = 0 : work_time--;
+    work_time < 1 ? work_time = 0 : work_time--;
     work_time_div.textContent = work_time;  
     buttonClickObj.play();
-    buttonClickObj.currentTime = 0; 
+    // buttonClickObj.currentTime = 0; 
   });
  
 
@@ -51,15 +56,15 @@ function init() {
     work_time++;
     work_time_div.textContent = work_time; 
     buttonClickObj.play();
-    buttonClickObj.currentTime = 0; 
+    // buttonClickObj.currentTime = 0; 
   });
 
  
   document.querySelector('#sub_rest').addEventListener('click', () => {
-    rest_time < 0 ? rest_time = 0 : rest_time--;
+    rest_time < 1 ? rest_time = 0 : rest_time--;
     rest_time_div.textContent = rest_time;  
     buttonClickObj.play();
-    buttonClickObj.currentTime = 0; 
+    // buttonClickObj.currentTime = 0; 
   });
   
   
@@ -67,14 +72,14 @@ function init() {
     rest_time++;
     rest_time_div.textContent = rest_time;  
     buttonClickObj.play();
-    buttonClickObj.currentTime = 0; 
+    // buttonClickObj.currentTime = 0; 
   });
 
   document.querySelector('#sub_round').addEventListener('click', () => {
     if (rounds > 1) {
       rounds--;
       buttonClickObj.play();
-      buttonClickObj.currentTime = 0; 
+      // buttonClickObj.currentTime = 0; 
     }
     rounds_div.textContent = rounds;  
   });
@@ -82,7 +87,7 @@ function init() {
     rounds++;
     rounds_div.textContent = rounds;  
     buttonClickObj.play();
-    buttonClickObj.currentTime = 0; 
+    // buttonClickObj.currentTime = 0; 
   });
   
   // const start_button = document.querySelector('#start');
@@ -93,14 +98,14 @@ function init() {
 
 function update() {
   document.querySelector('#seconds').textContent = current_time;
-  document.querySelector('#progress').textContent = '' + (rounds - rounds_remaining) + '/' + rounds;
+  document.querySelector('#progress').textContent = ' ' + (rounds - rounds_remaining) + '/' + rounds;
   document.querySelector('#phase').textContent = phase;
-  if (current_time > 0 && current_time < 4 && !(phase === 'work' && rounds_remaining === 0 && current_time === 1)) {
+  if (current_time > 0 && current_time < 4 && !(phase === 'work' && rounds_remaining === 0 && current_time === 0)) {
   }
   
   // I removed the color here 
   document.querySelector('#modalcontent').style.background = phase === 'Rest' ? '#3711A1' : null; 
-  if (current_time > 1) {
+  if (current_time > 0) {
     document.querySelector('#seconds').style.color = (current_time < 4) ? 'white' : 'white';
     --current_time;
   } else {
@@ -110,7 +115,7 @@ function update() {
         current_time = work_time;
         --rounds_remaining;
         startSoundObj.play();
-        startSoundObj.currentTime = 0; 
+        // startSoundObj.currentTime = 0; 
         break;
       case 'Work':
         if (rounds_remaining === 0) {
@@ -118,7 +123,7 @@ function update() {
           return;
         } else {
           startSoundObj.play();
-          startSoundObj.currentTime = 0; 
+          // startSoundObj.currentTime = 0; 
           current_time = rest_time;
           phase = 'Rest';
         }
@@ -128,7 +133,7 @@ function update() {
         current_time = work_time;
         phase = 'Work';
         startSoundObj.play();
-        startSoundObj.currentTime = 0; 
+        // startSoundObj.currentTime = 0; 
         break;
     }
   }
@@ -175,6 +180,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
+  writeData();
   start();
 }
 
@@ -206,51 +212,6 @@ window.onclick = function(event) {
   }
 }
 
-// Sounds on button clicks
-
-// const addPrep = document.querySelectorAll("#add_prep");
-// const subPrep = document.querySelectorAll("#sub_prep");
-
-// const addWork = document.querySelectorAll("#add_work");
-// const subWork = document.querySelectorAll("#sub_work");
-
-// const addRest = document.querySelectorAll("#add_rest");
-// const subRest = document.querySelectorAll("#sub_rest");
-
-// const addRound = document.querySelectorAll("#add_round");
-// const subRound = document.querySelectorAll("#sub_round");
-
-
-
-// addPrep.forEach(button => {
-// //   addPrep.addEventListener("click", () => {
-// //    buttonClickObj.play();
-// //     buttonClickObj.currentTime = 0;
-// //   });
-// // });
-
-// // subPrep.forEach(button => {
-// //   subPrep.addEventListener("click", () => {
-// //    buttonClickObj.play();
-// //     buttonClickObj.currentTime = 0;
-// //   });
-// // });
-
-
-// addWork.forEach(button => {
-//   button.addEventListener("click", () => {
-//    buttonClickObj.play();
-//     buttonClickObj.currentTime = 0;
-//   });
-// });
-
-// subWork.forEach(button => {
-//   button.addEventListener("click", () => {
-//    buttonClickObj.play();
-//     buttonClickObj.currentTime = 0;
-//   });
-// });
-
 
 
 function stopAllAudio() {
@@ -260,4 +221,70 @@ function stopAllAudio() {
 
   buttonClickObj.pause();
   buttonClickObj.currentTime = 0;
+}
+
+
+// Local Storage
+
+function readData() {
+  console.log("readData called");
+  // Does this browser support local storage?
+  if (typeof (Storage) !== "undefined") {
+
+  // Allison Drake
+  // My custom code
+  prepareTimeStr = localStorage.amd_prepareTime;
+  workTimeStr = localStorage.amd_workTime;
+  restTimeStr = localStorage.amd_restTime;
+  roundsStr = localStorage.amd_rounds;
+  // Convert prep time string to integer variable
+  prepareTime = parseInt(prepareTimeStr);
+  workTime = parseInt(workTimeStr);
+  restTime = parseInt(restTimeStr);
+  rounds = parseInt(roundsStr);
+// Allison Drake
+// Do the same for the other variables
+if (typeof (prepareTimeStr) !== "undefined"){
+  prepare_time_div.textContent = prepareTimeStr; 
+  work_time_div.textContent = workTimeStr;
+  rest_time_div.textContent = restTimeStr;
+  rounds_div.textContent = roundsStr;
+}
+else {
+ prepare_time_div.textContent = "5";
+ work_time_div.textContent = "5";
+ rest_time_div.textContent = "5";
+ rounds_div.textContent = "10";
+ prepare_time = 5;
+ work_time = 5;
+ rest_time = 5;
+ rounds = 10;
+}
+  } else {
+    // Sorry! No Web Storage support..
+    alert('This browser does NOT support local storage');
+  }
+}
+
+// When you hit start
+function writeData() {
+  console.log("writeData called");
+  if (typeof (Storage) !== "undefined") {
+    // Allison Drake
+   
+    localStorage.amd_prepareTime = prepare_time_div.textContent;
+
+
+    localStorage.amd_workTime = work_time_div.textContent;
+
+    
+    localStorage.amd_restTime = rest_time_div.textContent;
+
+    
+    localStorage.amd_rounds = rounds_div.textContent;
+    
+  } else {
+    // Sorry! No Web Storage support..
+    alert('This browser does NOT support local storage');
+  }
 }

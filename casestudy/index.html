@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="normalizer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Case Study | Pete's Little Lunch Box</title>
+    <title>Case Study | Interval Timer</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 
             <div class="header">
                 <h1>MY ROLE</h1>
-                <p>I worked individually to develop a web-based application with HTML, CSS, and Javascript.</p>
+                <p>I worked individually to develop a web-based application with HTML, CSS, and JavaScript.</p>
             </div>
 
             <div class="context_and_challenge">
@@ -37,67 +37,83 @@
 
         </div>
 
-        <div class="hero2">
-        </div>
+        <!-- <div class="hero2">
+        </div> -->
 
         <div class="section_two">
 
             <div class="process_and_insight">
+
+
+                    <!--Add image of teams and image of spreadsheet-->
+                    <div class="image_row">
+
+                        <a href="#img3">
+                        <img id="wireframe" src="images/wireframe.png" alt="wireframe">
+                        </a>
+    
+                        <a href="#" class="lightbox" id="img3">
+                            <span style="background-image: url('images/wireframe.png')"></span>
+                          </a>
+    
+                        <a href="#img4">
+                        <img src="images/together.png" alt="together">
+                        </a>
+    
+                        <a href="#" class="lightbox" id="img4">
+                            <span style="background-image: url('images/together.png')"></span>
+                          </a>
+                    </div>
+
                 <h1>PROCESS & INSIGHT</h1>
                 <h2>CHOOSING THE IDEA</h2>
-                <p>My primary role, the data architect, consisted of managing and organizing all of the files our team needed to access during the development of our alpha, beta, and final. This included creating and managing foldes on Teams that contained things such as images, usability tests, Figma files, and documents. Every time I added new images to the folders, I would make sure to update the asset spreadsheet and update the team on any changes. It was also my job to make sure the naming conventions were uniform across the board and to upload the correct assets to my local folder which would then be pushed to Github.</p>
-                <!--Add image of teams and image of spreadsheet-->
-                <div class="image_row">
+                <p>My goal was to choose an application with one core function. I decided on an interval timer because it is a tool that I consistently use. I started with brainstorming a potential layout by sketching out the screens. Next, I pulled inspiration from existing apps and styles that I could include in my interface. I had to keep in account the screen real estate as well as hit sizes when using mobile.</p>
+            
 
-                    <a href="#img3">
-                    <img src="images/teams.png" alt="teams">
-                    </a>
-
-                    <a href="#" class="lightbox" id="img3">
-                        <span style="background-image: url('images/teams.png')"></span>
-                      </a>
-
-                    <a href="#img4">
-                    <img src="images/spreadsheet.png" alt="spreadsheet">
-                    </a>
-
-                    <a href="#" class="lightbox" id="img4">
-                        <span style="background-image: url('images/spreadsheet.png')"></span>
-                      </a>
-
-                </div>
                 <h1>DEVELOPMENT</h1>
                 <h2>ALPHA</h2>
-                <p>My main priority for the alpha was to make sure we had everything we needed like images, fonts, and files to begin coding based off of the wireframes our UX/UI designers made. The primary coder and I built out a page together with multiple elements that a lot of the other pages had so that we knew how to get the core structure down. This also helped so that we were able to code on our own while still being on the same page. With that, any time any updates were made in the files the other coder was notified through Teams and made aware of the changes. For the alpha, we focused on a mobile layout, CSS customizations, and some microinteractions.</p>
+                <p>My main priority for the alpha was making sure I was able to code out all of the screens for the web app and to also make sure the buttons are functional. I implemented a modal that opens once you hit the start button.</p>
+                <p>I was also able to incorporate the "add to home screen" functionality using JavaScript that alerts the user a couple seconds after they visit the page. I decided that due to feasibility, I was going to focus on getting the timer to function rather than the progress bar. The second image just consists of a placeholder, so my next focus was coding it out.</p>
+                <p>Lastly, I added a screen that alerts the user to turn the screen back to portrait mode if they were to flip their phone to landscape.</p>
                 
+            <div class="image_row">
                 <a href="#img1">
                 <img class="alpha" src="images/alpha.png" alt="alpha">
                 </a>
-
                 <a href="#" class="lightbox" id="img1">
                     <span style="background-image: url('images/alpha.png')"></span>
                   </a>
-                  
+
+                  <a href="#img6">
+                    <img src="images/horizontal.png" alt="horizontal">
+                    </a>
+
+                    <a href="#" class="lightbox" id="img6">
+                        <span style="background-image: url('images/horizontal.png')"></span>
+                      </a>
+             </div>
 
                 <h2>BETA</h2>
-                <p>After fixing the alpha code based off the UX/UI designers' usability tests, our next phase was developing the beta. We refined our CSS, added more microinteractions, and made it responsive for tablets. As the coders, we thought the way that we approached the alpha worked well and decided to stick to that for the beta. I worked on integrating more assets into the app and responsiveness. We started thinking how we would use JS arrays to add more functionality to the user flow for the final.</p>
+                <p>The focus for the beta was adding functionality to the timer and making sure the input matched the output. There was some troubleshooting involved when it came to making sure the timer was functioning properly. This mainly consisted of fixing the JavaScript so that when the user hits start, the correct settings would appear in the timer. I also solved the issue of having the timer skip numbers or going too fast by removing some lines of code out of the loop and incorporating a reset function that reset the settings once the user quit out of the modal.</p>
                 
+                <div class="beta_container">
                 <a href="#img2">
-                <img class="beta" src="images/beta.png" alt="beta">
+                <img class="beta" src="images/gif.gif" alt="beta">
                 </a>
+                </div>
 
                 <a href="#" class="lightbox" id="img2">
-                    <span style="background-image: url('images/beta.png')"></span>
+                    <span style="background-image: url('images/gif.gif')"></span>
                   </a>
 
 
-                <a href="#img5">
+                <!-- <a href="#img5">
                 <img class="script" src="images/script.png" alt="script">
                 </a>
 
                 <a href="#" class="lightbox" id="img5">
                     <span style="background-image: url('images/script.png')"></span>
-                  </a>
+                  </a> -->
 
 
             </div>
@@ -107,14 +123,22 @@
             <div class="solution">
                 <h1>RESULTS</h1>
                 <h2>FINAL</h2>
-                <p>The biggest focus for the final was JS integration and making the user flow more dynamic. For example, we made each menu item load it's own custom information that the database remembered by the checkout page through JS arrays. I also implemented more complex microinteractions into the pages and made all of the pages responsive for desktop by adding columns to the layout. I updated any images based on the changes the designers made, added them into Teams, and updated the asset spreadsheet. The UX/UI designers went into the code and tweaked anything else such as layouts or customizations.</p>
+                <p>The biggest focus for the final was implementing localStorage functionality, so that the user could quit out of the app and open it again with the same settings they chose before. Because the settings consisted of numbers, there was a challenge of converting the strings into interval variables after checking local storage for information. This consisted of loops that read the data and then wrote it, and I worked to debug this by checking the local storage in the browser until the changes I made starting working. <br> <br> After fixing the issue of the timer and implementing localStorage, the timer was functioning properly and the final project was completed. The app could successfully be downloaded to the home screen, function properly, and save user input once closed and reopened.</p>
+
+                <a href="#img5">
+                <img class="localstorage" src="images/localstorage.png" alt="localstorage">
+                </a>
+
+                <a href="#" class="lightbox" id="img5">
+                    <span style="background-image: url('images/localstorage.png')"></span>
+                  </a>
 
                 <div class="view_project">
                     <h3>VIEW FINAL PROJECT HERE</h3>
-                    <button><a href="https://parkerishere.com/IDM216-luxecreative/final/menu.html" target="_blank">VIEW</a></button>
+                    <button><a href="https://allisondrakedesign.com/idm361/final/" target="_blank">VIEW</a></button>
                 </div>
                 <h2>TAKEAWAYS</h2>
-                <p>The biggest takeaway was learning to work on a team with different roles. We learned how to communicate as well as our collaborative styles, which I think meshed nicely. I took on roles that I wouldn't normally see myself in, but I ended up embracing them and growing my skills which I enjoyed. Our team was able to make quick turnarounds and work during crunch times to develop or alpha and beta, and by the end we developed a very functional app backed up by two terms of research and work.</p>
+                <p>The biggest takeaway was learning the best practices when it comes to web applications. I got to freshen up on my JavaScript and other features like adding the app to the homescreen, cache manifest, and local storage. I was able to debug with some assistance and by using critical thinking skills. </p>
             </div>
 
         </div>
